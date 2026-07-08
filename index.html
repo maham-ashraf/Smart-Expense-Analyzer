@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Analyzer - Personal Finance Intelligence System</title>
+    <link rel="icon" href="sea.png" >
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Smart Expense Analyzer</h1>
+                <p class="subtitle">Personal Finance Intelligence System</p>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Expense Input Section -->
+            <section class="expense-input-card">
+                <h2>Add New Expense</h2>
+                <form id="expenseForm" class="expense-form">
+                    <div class="form-group">
+                        <label for="amount">Amount (PKR)</label>
+                        <input type="number" id="amount" step="0.01" min="0" required placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" required placeholder="e.g., Pizza, Uber, Shoes">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Add Expense</button>
+                </form>
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon total">Total</div>
+                        <div class="stat-content">
+                            <h3 id="totalExpense">$0.00</h3>
+                            <p>Total Expenses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon category">Category</div>
+                        <div class="stat-content">
+                            <h3 id="topCategory">-</h3>
+                            <p>Top Category</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon count">Count</div>
+                        <div class="stat-content">
+                            <h3 id="expenseCount">0</h3>
+                            <p>Transactions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon average">Avg</div>
+                        <div class="stat-content">
+                            <h3 id="avgExpense">$0.00</h3>
+                            <p>Average Expense</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Spending by Category</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Monthly Trends</h3>
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="filter-section">
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search expenses...">
+                    </div>
+                    <div class="filter-options">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <input type="month" id="monthFilter">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expense List Section -->
+            <section class="expense-list-section">
+                <h2>Recent Expenses</h2>
+                <div id="expenseList" class="expense-list">
+                    <!-- Expenses will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Smart Suggestions Section -->
+            <section class="suggestions-section">
+                <h2>Smart Financial Suggestions</h2>
+                <div id="suggestionsList" class="suggestions-list">
+                    <!-- Suggestions will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Smart Expense Analyzer - Personal Finance Intelligence System</p>
+                <p>All Rights Reserved</p>
+                <p class="footer-note">Advanced Frontend Web Application for Financial Management</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
