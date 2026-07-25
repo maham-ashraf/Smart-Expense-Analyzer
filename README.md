@@ -136,14 +136,4 @@ Based on spending patterns:
 - No sensitive financial data is transmitted
 - Suitable for personal expense tracking only
 
-## Contributing
 
-Feel free to fork the project and submit pull requests for improvements!
-
-## License
-
-This project is open source and available under the MIT License.
-
----
-
-**Smart Expense Analyzer** - Your Personal Finance Intelligence System
